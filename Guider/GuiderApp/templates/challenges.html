@@ -1,0 +1,312 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenges</title>
+</head>
+<body>
+    <style>
+
+    body {
+    background-image: url("{% static 'images/background2.png' %}");
+    background-position: center;
+    background-repeat: repeat-y;
+    width: 15px;
+    height: 300vh;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    overflow-x: hidden;
+    }
+
+    .logo {
+        width: 50%;
+        position: absolute;
+        top: -140px;
+        right: 250px
+    }
+
+    .sidebar {
+        position: absolute;
+        top: 200px;
+        left: 0;
+        width: 270px;
+        height: 750px;
+        background-color: crimson;
+    }
+
+    .content-block {
+        position: absolute;
+        top: 250px;
+        left: 500px;
+        width: 900px;
+        height: 200px;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .content-block1 {
+        position: absolute;
+        top: 45vh;
+        left: 500px;
+        width: 900px;
+        height: 85vh;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .content-block2 {
+        position: absolute;
+        top: 130vh;
+        left: 500px;
+        width: 900px;
+        height: 50vh;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .content-block3 {
+        position: absolute;
+        top: 180vh;
+        left: 500px;
+        width: 900px;
+        height: 105vh;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .content-block4 {
+        position: absolute;
+        top: 285vh;
+        left: 500px;
+        width: 900px;
+        height: 32vh;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .content-block5 {
+        position: absolute;
+        top: 3900px;
+        left: 500px;
+        width: 900px;
+        height: 80vh;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: left;
+    }
+
+    .entry1{
+        position: absolute;
+        top: 4650px;
+        left: 500px;
+        width: 900px;
+        height: 126vh;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .lasttip{
+        position: absolute;
+        top: 5850px;
+        left: 500px;
+        width: 900px;
+        height: 75vh;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: center;
+    }
+
+
+    .gif1 {
+        position: absolute;
+        top: 900px;
+        left: 500px;
+        width: 900px;
+        text-align: center;
+    }
+
+    .gif2 {
+        position: absolute;
+        top: 165vh;
+        left: 500px;
+        width: 900px;
+        text-align: center;
+    }
+
+    .gif3 {
+        position: absolute;
+        top: 240vh;
+        left: 500px;
+        width: 900px;
+        text-align: center;
+    }
+
+    .gif4 {
+        position: absolute;
+        top: 445vh;
+        left: 500px;
+        width: 900px;
+        text-align: center;
+    }
+
+    .gif5 {
+        position: absolute;
+        top: 505vh;
+        left: 500px;
+        width: 900px;
+        text-align: center;
+    }
+
+    .entry {
+        position: absolute;
+        top: 310vh;
+        left: 500px;
+        width: 900px;
+        text-align: center;
+    }
+
+    .map {
+        position: absolute;
+        top: 50vh;
+        right: 100px;   
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        font-size: 25px;
+        line-height: 2;
+    }
+
+    ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    ul li a:hover {
+        text-decoration: underline;
+        color: grey
+    }
+
+    .badge {
+        position: absolute;
+        top: 400px;
+        left: 50px;
+    }
+
+    .badge1 {
+        position: absolute;
+        top: 405px;
+        left: 135px;
+    }
+
+    .image1 {
+        position: absolute;
+        top: 500px;
+        left: 0px;
+    }
+
+    #clock {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 30px;
+    }
+
+    #clock span {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    }
+
+    </style>
+<div class = "body">
+    <img src="{% static 'images/background2.png' %}" alt="Background Image"> 
+</div>
+<div class = "logo">
+    <img src="{% static 'images/logo.png' %}" alt="Logo Image">
+</div>
+<div class ="clock" id="clock">
+<script>
+    function updateClock() {
+        const now = new Date();
+        const date = now.toLocaleDateString();
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        const timeString = 
+        date + ' ' +
+        (hours < 10 ? '0' : '') + hours + ':' +
+        (minutes < 10 ? '0' : '') + minutes + ':' +
+        (seconds < 10 ? '0' : '') + seconds;
+        document.getElementById('clock').textContent = timeString;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+</div>
+
+<div class = "sidebar">
+    <ul class="no-bullets">        
+         <li><a href="home.html">Home</a></li>
+         <li><a href="guide.html">Guide</a></li>
+         <li><a href="clothes.html">Clothes</a></li>
+         <li><a href="achievements.html">Achievements</a></li>
+    </ul>
+</div>
+<div class = "badge">
+    <img src="{% static 'images/badge.png' %}" alt="Badge">
+</div>
+<div class = "badge1">
+    <img src="{% static 'images/foilbadge.png' %}" alt="Foil Badge">
+</div>
+<div class = "image1">
+    <img src="{% static 'images/Alexis.png' %}" alt = "Seve's Guider">
+</div>
+<div class = "content-block">
+    <p> You've probably completed the game a few times. Why not consider to do a challenge?</p>
+</div>
+<div class ="content-block1">
+    <strong> Vsync </strong>
+    <p> This option can be activated before you start the game. It's making the game speed double, requiring you to position the character a lot. It's challenging. </p>
+    <img src = "{% static 'images/vsync.gif' %}" alt = "Vsync">
+</div>
+<div class ="content-block2">
+    <strong> Keyboarder </strong>
+    <p> Hear me out about that. Yes, you can play with Keyboard, but some notes say don't do it, as it's painful or if you cannot reach your controller. 
+        It takes a bit of time to get used to it. The only problem is you cannot delete the savefile if you want to start all over. 
+    </p>
+</div>
+<div class ="content-block3">
+    <strong> Hardcore </strong>
+    <p> Now, this challenge requires you dedication and pure skill to achieve 0 deaths the entire gameplay. Although there are parts in which can be difficult
+        even to try to keep yourself away from dying, having enough Health at all times is essential to this one. It's all about matter of trial and error.
+    </p>
+    <img src="{% static 'images/hardcore.gif' %}" alt = "Hardcore">
+</div>
+<div class ="content-block4">
+    <strong> Speedrunner </strong>
+    <p> How fast can you go? For this one you need to practice your tricks for hours to attempt to do it right. </p>
+</div>
+</body>
+</html>

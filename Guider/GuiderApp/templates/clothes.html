@@ -1,0 +1,366 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothes</title>
+</head>
+<body>
+    <style>
+
+    body {
+    background-image: url("{% static 'images/background2.png' %}");
+    background-position: center;
+    background-repeat: repeat-y;
+    width: 15px;
+    height: 300vh;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    overflow-x: hidden;
+    }
+
+    .logo {
+        width: 50%;
+        position: absolute;
+        top: -140px;
+        right: 250px
+    }
+
+    .sidebar {
+        position: absolute;
+        top: 200px;
+        left: 0;
+        width: 270px;
+        height: 750px;
+        background-color: crimson;
+    }
+
+    .content-block {
+        position: absolute;
+        top: 250px;
+        left: 500px;
+        width: 900px;
+        height: 350px;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .content-block1 {
+        position: absolute;
+        top: 600px;
+        left: 500px;
+        width: 900px;
+        height: 80vh;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: left;
+    }
+
+    .content-block2 {
+        position: absolute;
+        top: 1300px;
+        left: 500px;
+        width: 900px;
+        height: 80vh;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: left;
+    }
+
+    .content-block3 {
+        position: absolute;
+        top: 2000px;
+        left: 500px;
+        width: 900px;
+        height: 80vh;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: left;
+    }
+
+    .content-block4 {
+        position: absolute;
+        top: 2700px;
+        left: 500px;
+        width: 900px;
+        height: 127vh;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: left;
+    }
+
+    .content-block5 {
+        position: absolute;
+        top: 3900px;
+        left: 500px;
+        width: 900px;
+        height: 80vh;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: left;
+    }
+
+    .entry1{
+        position: absolute;
+        top: 4650px;
+        left: 500px;
+        width: 900px;
+        height: 126vh;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .lasttip{
+        position: absolute;
+        top: 5850px;
+        left: 500px;
+        width: 900px;
+        height: 75vh;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: center;
+    }
+
+
+    .gif1 {
+        position: absolute;
+        top: 900px;
+        left: 500px;
+        width: 900px;
+        text-align: center;
+    }
+
+    .gif2 {
+        position: absolute;
+        top: 165vh;
+        left: 500px;
+        width: 900px;
+        text-align: center;
+    }
+
+    .gif3 {
+        position: absolute;
+        top: 240vh;
+        left: 500px;
+        width: 900px;
+        text-align: center;
+    }
+
+    .gif4 {
+        position: absolute;
+        top: 445vh;
+        left: 500px;
+        width: 900px;
+        text-align: center;
+    }
+
+    .gif5 {
+        position: absolute;
+        top: 505vh;
+        left: 500px;
+        width: 900px;
+        text-align: center;
+    }
+
+    .entry {
+        position: absolute;
+        top: 310vh;
+        left: 500px;
+        width: 900px;
+        text-align: center;
+    }
+
+    .map {
+        position: absolute;
+        top: 50vh;
+        right: 100px;   
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        font-size: 25px;
+        line-height: 2;
+    }
+
+    ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    ul li a:hover {
+        text-decoration: underline;
+        color: grey
+    }
+
+    .badge {
+        position: absolute;
+        top: 400px;
+        left: 50px;
+    }
+
+    .badge1 {
+        position: absolute;
+        top: 405px;
+        left: 135px;
+    }
+
+    .image1 {
+        position: absolute;
+        top: 500px;
+        left: 0px;
+    }
+
+    .videoblock{
+        position: absolute;
+        top: 5200px;
+        left: 500px;
+        width: 900px;
+        height: 50vh;
+        background-color: crimson;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    #clock {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 30px;
+    }
+
+    #clock span {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    }
+
+    </style>
+<div class = "body">
+    <img src="{% static 'images/background2.png' %}" alt="Background Image"> 
+</div>
+<div class = "logo">
+    <img src="{% static 'images/logo.png' %}" alt="Logo Image">
+</div>
+<div class ="clock" id="clock">
+<script>
+    function updateClock() {
+        const now = new Date();
+        const date = now.toLocaleDateString();
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        const timeString = 
+        date + ' ' +
+        (hours < 10 ? '0' : '') + hours + ':' +
+        (minutes < 10 ? '0' : '') + minutes + ':' +
+        (seconds < 10 ? '0' : '') + seconds;
+        document.getElementById('clock').textContent = timeString;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+</div>
+
+<div class = "sidebar">
+    <ul class="no-bullets">        
+         <li><a href="home.html">Home</a></li>
+         <li><a href="guide.html">Guide</a></li>
+         <li><a href="achievements.html">Achievements</a></li>
+         <li><a href="challenges.html">Challenges</a></li>
+    </ul>
+</div>
+<div class = "badge">
+    <img src="{% static 'images/badge.png' %}" alt="Badge">
+</div>
+<div class = "badge1">
+    <img src="{% static 'images/foilbadge.png' %}" alt="Foil Badge">
+</div>
+<div class = "image1">
+    <img src="{% static 'images/Alexis.png' %}" alt = "Seve's Guider">
+</div>
+<div class = "content-block">
+    <p>Did you know that you can change your cloth color?</p>
+    <p>No problem. Here you can choose what color you want to wear.</p>
+</div>
+<div class ="content-block1">
+    <p></p>
+    <strong><u>Red Outfit</u></strong>
+    <p> You always start with this every time you start a new game.</p>
+</div>
+    <div class ="gif1">
+    <img src="{% static 'images/red_out.gif' %}" alt = "Default Seve">
+    </div>
+    <p></p>
+<div class ="content-block2">
+    <p></p>
+    <strong><u>Blue Outfit</strong></u>
+    <p> Easy to obtain. Need 3 <b>Void Screws</b> to have it.</p>
+    </div>
+    <div class ="gif2">
+        <img src="{% static 'images/blue_outfit.gif' %}" alt = "Blue Seve">
+    </div>
+<div class ="content-block3">
+    <p></p>
+    <strong><u>Green Outfit</u></strong>
+    <p> Easy to obtain. Need 4 <b>Void Screws</b> to have it.</p>
+</div>
+    <div class ="gif3">
+        <img src="{% static 'images/green_outfit.gif' %}" alt = "Green Seve">
+    </div>
+<div class ="content-block4">
+    <p></p>
+    <p> <strong>Some Other Place </strong> can be discovered as soon as you start the game, if you didn't know. </p>
+</div>
+<div class = "entry">
+    <img src="{% static 'images/entry.gif' %}" alt = "Entry">
+    <div class = "map">
+    <img src="{% static 'images/somewhere_ around_the_world _map.png' %}" alt ="Map" class="pop-out-image", style = "width: 80%"; height: auto;>
+    </div>
+</div>
+<div class ="content-block5">
+    <p></p>
+    <strong><u>Black Outfit</strong></u> 
+    <p> Now this is a hard one to obtain. You must have at least <b>XP Lvl 5</b> to gain access to <b>Anxiety Tower</b>. </p>
+</div>
+    <div class ="gif4">
+        <img src="{% static 'images/black_outfit.gif' %}" alt = "Black Seve">
+    </div>
+<div class ="entry1">
+    <p></p>
+    <p> Here's how to gain entry to the room to get the black outfit.</p>
+</div>
+    <div class ="gif5">
+        <img src="{% static 'images/entry1.gif' %}" alt = "Anxiety Tower Soda Machine">
+    </div>
+<div class="videoblock">
+    <p></p>
+    <p> Genuinly, it is a hard one to practice. Having both <b>Health Upgrades</b> will give you extra 2 tries on this. It's all about rhythm.</p>
+    <p></p>
+    <video width="640" height="360" controls>
+        <source src="{% static 'videos/attempt.mp4' %}" type="video/mp4">
+    </video>
+</div>
+<div class="lasttip">
+    <p></p>
+    <p> If you choose not to wear any cloth color (aka blue, green or black), you will have <b>Red Outfit</b>.</p>
+    <img src="{% static 'images/normal.gif' %}" alt = "Back to normal">
+</div>
+</div>
+</body>
+</html>
